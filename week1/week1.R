@@ -29,19 +29,21 @@ result[2,4] <- 0.85*b == (0.575*a + 0.15*c)
 
 
 # Question 4
+# no "taxation" ==> beta is 1
 
 M = matrix(c(0, 0.5, 0.5, 0, 0, 1, 1, 0, 0), ncol=3)
 r2 <- pagerank(1, M, 500) * 3
-a <- r2[1]
-b <- r2[2]
 c <- r2[3]
 result[3,1] <- c == 9/7
+
 M = matrix(c(0, 0.5, 0.5, 0, 0, 1, 1, 0, 0), ncol=3)
 r2 <- pagerank(1, M, 4) * 3
 a <- r2[1]
 b <- r2[2]
-c <- r2[3]
 result[3,2] <- b == 0.5
 result[3,3] <- b == 11/6
 result[3,4] <- a == 9/8
+
+# Print Questions results
+
 result
