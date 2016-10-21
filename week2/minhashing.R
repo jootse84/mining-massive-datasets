@@ -3,10 +3,10 @@
 
 minhashing <- function(M, hash) {
   result = rep(Inf, times=dim(M)[2])
-  for(i in hash) {
+  for(h in hash) {
     for(j in 1:dim(M)[2]) {
-      if(hash[i] < result[j] && M[hash[i],j] == 1) {
-        result[j] = hash[i]
+      if(result[j] == Inf && M[h,j] == 1) {
+        result[j] = h
       }
     }
   }
