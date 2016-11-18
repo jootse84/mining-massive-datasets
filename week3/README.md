@@ -43,7 +43,9 @@ For our estimate of the surprise number, we shall choose three timestamps at ran
 
 You should discover the simple rules that determine the estimate derived from any given timestamp and from any set of three timestamps. Then, identify from the list below the set of three "random" timestamps that give the closest estimate.
 
-**Resp:**
+**Resp:** {17, 43, 51}
+
+Not in list:  {5, 33, 67}  {31, 32, 44}  {14, 35, 42}
 
 # Question 2:
 
@@ -63,7 +65,61 @@ Note: we are showing timestamps as absolute values, rather than modulo the windo
 
 Suppose that at times 101 through 105, 1's appear in the stream. Compute the set of buckets that would exist in the system at time 105. Then identify one such bucket from the list below. Buckets are represented by pairs (end-time, size).
 
-**Resp:**
+**Resp:** (98,4)
+
+at times 101 through 105, 1's appear in the stream, status after:
+*Strategy: add +1 on timeline, check if there are more than 2 buckets with same size, group them to a new size=sizex2 and with timestamp equals to the latest/largest one. Keep checking until there are no more than 2 buckets with same size.* 
+
+
+| End Time | Size |
+| -------- |:----:|
+| 101      | 1    |
+| 98       | 2    |
+| 92       | 4    |
+| 87       | 4    |
+| 80       | 8    |
+| 65       | 8    |
+
+| End Time | Size |
+| -------- |:----:|
+| 102      | 1    |
+| 101      | 1    |
+| 98       | 2    |
+| 92       | 4    |
+| 87       | 4    |
+| 80       | 8    |
+| 65       | 8    |
+
+| End Time | Size |
+| -------- |:----:|
+| 103      | 1    |
+| 101      | 2    |
+| 98       | 2    |
+| 92       | 4    |
+| 87       | 4    |
+| 80       | 8    |
+| 65       | 8    |
+
+| End Time | Size |
+| -------- |:----:|
+| 104      | 1    |
+| 103      | 1    |
+| 101      | 2    |
+| 98       | 2    |
+| 92       | 4    |
+| 87       | 4    |
+| 80       | 8    |
+| 65       | 8    |
+
+| End Time | Size |
+| -------- |:----:|
+| 105      | 1    |
+| 103      | 2    |
+| 98       | 4    | (98,4)
+| 87       | 8    |
+| 65       | 16   |
+
+Not in list:  (80,8) (87,4) (103,1)
 
 # Question 3:
 
@@ -71,7 +127,9 @@ We wish to use the Flagolet-Martin algorithm of Section 4.4 to count the number 
 
 A set of four of the elements 1 through 10 could give an estimate that is exact (if the estimate is 4), or too high, or too low. You should figure out under what circumstances a set of four elements falls into each of those categories. Then, identify in the list below the set of four elements that gives the exactly correct estimate.
 
-**Resp:**
+**Resp:** { 1, 3, 9, 10}
+
+Not in list: {3, 4, 8, 10}  {2, 3, 6, 9}  {2, 6, 8, 9}
 
 # Question 4:
 
@@ -79,11 +137,18 @@ A certain Web mail service (like gmail, e.g.) has 108 users, and wishes to creat
 
 The method of Section 4.2.4 will be used. User ID's will be hashed to a bucket number, from 0 to 999,999. At all times, there will be a threshold t such that the 100-byte records for all the users whose ID's hash to t or less will be retained, and other users' records will not be retained. You may assume that each user generates emails at exactly the same rate as other users. As a function of n, the number of emails in the stream so far, what should the threshold t be in order that the selected records will not exceed the 1010 bytes available to store records? From the list below, identify the true statement about a value of n and its value of t.
 
-**Resp:**
+**Resp:** n = 10^13; t = 9
 
 # Question 5:
 
 Suppose we hash the elements of a set S having 23 members, to a bit array of length 100. The array is initially all-0's, and we set a bit to 1 whenever a member of S hashes to it. The hash function is random and uniform in its distribution. What is the expected fraction of 0's in the array after hashing? What is the expected fraction of 1's? You may assume that 100 is large enough that asymptotic limits are reached.
 
-**Resp:**
+**Resp:** the fraction of 1's - e-23/100
 
+members: 23
+bit array of length: 100
+initial array all 0's
+hash function is random and uniform
+
+expected 0's -> e-23/100
+expected 1's -> 1 - e-23/100
