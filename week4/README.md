@@ -3,7 +3,7 @@
 Here is a table of 1-5 star ratings for five movies (M, N, P. Q. R) by three raters (A, B, C).
 
 |   | M	| N | P | Q | R |
-| - |:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 | A | 1	| 2 | 3 | 4 | 5 |
 | B | 2 | 3 | 2 | 5 | 3 |
 | C | 5 | 5 | 5 | 3 | 2 |
@@ -24,7 +24,7 @@ False ones:
 Below is a table giving the profile of three items.
 
 |   |  	|   |   |   |   |   |
-| - |:-:|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | A | 1 | 0 | 1 | 0 | 1 | 2 |
 | B | 1 | 1 | 0 | 0 | 1 | 6 |
 | C | 0 | 1 | 0 | 1 | 0 | 2 |
@@ -46,7 +46,7 @@ Below is a utility matrix representing ratings by users A, B, and C for items a 
 
 
 |   | a	| b | c | d | e | f | g | h |
-| - |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | A | 4 | 5 | - | 5 | 1 | - | 3 | 2 |
 | B | - | 3 | 4 | 3 | 1 | 2 | 1 | - |
 | C | 2 | - | 1 | 3 | - | 4 | 5 | 3 |
