@@ -65,17 +65,18 @@ Note: we are showing timestamps as absolute values, rather than modulo the windo
 
 Suppose that at times 101 through 105, 1's appear in the stream. Compute the set of buckets that would exist in the system at time 105. Then identify one such bucket from the list below. Buckets are represented by pairs (end-time, size).
 
-**Resp:** (98,4)
+**Resp:** (104,2)
 
 at times 101 through 105, 1's appear in the stream, status after:
+
 *Strategy: add +1 on timeline, check if there are more than 2 buckets with same size, group them to a new size=sizex2 and with timestamp equals to the latest/largest one. Keep checking until there are no more than 2 buckets with same size.* 
 
 
 | End Time | Size |
 | -------- |:----:|
 | 101      | 1    |
-| 98       | 2    |
-| 92       | 4    |
+| 100      | 2    |
+| 95       | 4    |
 | 87       | 4    |
 | 80       | 8    |
 | 65       | 8    |
@@ -84,8 +85,8 @@ at times 101 through 105, 1's appear in the stream, status after:
 | -------- |:----:|
 | 102      | 1    |
 | 101      | 1    |
-| 98       | 2    |
-| 92       | 4    |
+| 100      | 2    |
+| 95       | 4    |
 | 87       | 4    |
 | 80       | 8    |
 | 65       | 8    |
@@ -93,9 +94,9 @@ at times 101 through 105, 1's appear in the stream, status after:
 | End Time | Size |
 | -------- |:----:|
 | 103      | 1    |
-| 101      | 2    |
-| 98       | 2    |
-| 92       | 4    |
+| 102      | 2    |
+| 100      | 2    |
+| 95       | 4    |
 | 87       | 4    |
 | 80       | 8    |
 | 65       | 8    |
@@ -104,9 +105,9 @@ at times 101 through 105, 1's appear in the stream, status after:
 | -------- |:----:|
 | 104      | 1    |
 | 103      | 1    |
-| 101      | 2    |
-| 98       | 2    |
-| 92       | 4    |
+| 102      | 2    |
+| 100      | 2    |
+| 95       | 4    |
 | 87       | 4    |
 | 80       | 8    |
 | 65       | 8    |
@@ -114,12 +115,12 @@ at times 101 through 105, 1's appear in the stream, status after:
 | End Time | Size |
 | -------- |:----:|
 | 105      | 1    |
-| 103      | 2    |
-| 98       | 4    | (98,4)
-| 87       | 8    |
-| 65       | 16   |
+| 104      | 2    | (104,2)
+| 102      | 4    |
+| 95       | 8    |
+| 80       | 16   |
 
-Not in list:  (80,8) (87,4) (103,1)
+Not in list: (100,2) (102,2) (98,4)
 
 # Question 3:
 
@@ -145,10 +146,10 @@ Suppose we hash the elements of a set S having 23 members, to a bit array of len
 
 **Resp:** the fraction of 1's - e-23/100
 
-members: 23
-bit array of length: 100
-initial array all 0's
-hash function is random and uniform
+- members: 23
+- bit array of length: 100
+- initial array all 0's
+- hash function is random and uniform
 
 expected 0's -> e-23/100
 expected 1's -> 1 - e-23/100
