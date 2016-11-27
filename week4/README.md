@@ -95,3 +95,155 @@ False ones:
 - y = 2/3.
 - y = 5.
 - x = 2.
+
+
+
+# Question 1:
+
+Note: In this question, all columns will be written in their transposed form, as rows, to make the typography simpler. Matrix M has three rows and three columns, and the columns form an orthonormal basis. One of the columns is [2/7,3/7,6/7], and another is [6/7, 2/7, -3/7]. Let the third column be [x,y,z]. Since the length of the vector [x,y,z] must be 1, there is a constraint that x^2+y^2+z^2 = 1. However, there are other constraints, and these other constraints can be used to deduce facts about the ratios among x, y, and z. Compute these ratios, and then identify one of them in the list below.
+
+
+**Resp:** y = -2x
+
+orthonomal cols, their dot product is equals to 0 => col(i) * col(j) == 0, for i != j
+
+c1 = [2/7,3/7,6/7], c2 = [6/7, 2/7, -3/7], c3 = [x,y,z]
+
+c1 * c2 = 2/7 * 6/7 + 3/7 * 2/7 + 6/7 * -3/7 = 0
+
+c1 * c3 = 2/7 * x + 3/7 * y + 6/7 * z
+
+c2 * c3 = 6/7 * x + 2/7 * y - 3/7 * z
+
+Equation: c1 * c3 == c2 * c3
+
+2/7 * x + 3/7 * y + 6/7 * z = 0;
+2x + 3y + 6z = 0;
+x + 3/2y + 3z = 0; # eq1' divide by 2
+1/3x + 1/2y + z = 0; # eq1'' divide by 6
+
+6/7 * x + 2/7 * y - 3/7 * z = 0;
+6x + 2y - 3z = 0;
+x + 1/3y - 1/2z = 0; # eq2' divide by 6
+2x + 2/3y - z = 0; # eq2'' divide by 3
+
+eq1' minus eq2'
+
+(3/2 - 1/3) * y + (3 - 1/2) z = 0;
+(7/6) * y + (5/2) z = 0;
+7/6y = -5/2z;
+
+y = -30/14*z;
+z = -14/30*y;
+
+
+eq1'' plus eq2''
+
+(1/3 + 2) * x + (1/2 + 2/3) * y = 0;
+14/6x + 7/6y = 0;
+14x + 7y = 0;
+y = -2x;
+x = -1/2y;
+
+False ones:
+
+- y = 3z
+- z = -3y
+- x = 2y
+
+
+# Question 2:
+
+Find the eigenvalues and eigenvectors of the following matrix:
+
+|   |    |
+|:-:|:--:|
+| 2 | 3  |
+| 3 | 10 |
+
+
+You should assume the first component of an eigenvector is 1. Then, identify one of these in the list below.
+
+**Resp:**  One eigenvector is
+
+|   |
+|:-:|
+| 1 |
+| 3 |
+
+
+False ones:
+
+- One eigenvector is
+
+|    |
+|:--:|
+| 1  |
+| 11 |
+
+- One eigenvector is
+
+|   |
+|:-:|
+| 1 |
+| 2 |
+
+- One eigenvalue is 10.
+
+# Question 3:
+
+Suppose [1,3,4,5,7] is an eigenvector of some matrix. What is the unit eigenvector in the same direction? Find one of the components of the unit eigenvector in the list below (correct to two decimal places).
+
+**Resp:** 0.10
+
+False ones: 0.28  0.36  0.15
+
+# Question 4:
+
+Suppose we have three points in a two dimensional space: (1,1), (2,2), and (3,4). We want to perform PCA on these points, so we construct a 2-by-2 matrix, call it N, whose eigenvectors are the directions that best represent these three points. Construct the matrix N and identify, in the list below, one of its elements.
+
+**Resp:** 21
+
+False ones: 19  23  22
+
+# Question 5:
+
+Consider the diagonal matrix M =
+
+|   |   |   |
+|:-:|:-:|:-:|
+| 1 | 0 | 0 |
+| 0 | 2 | 0 |
+| 0 | 0 | 0 |
+
+Compute its Moore-Penrose pseudoinverse, and then identify, in the list below, the true statement about the elements of the pseudoinverse.
+
+**Resp:** There is one element with value 1.
+
+False ones:
+
+- There is one element with value -1. 
+- There is one element with value 0.
+- There is one element with value infinity. 
+
+# Question 6:
+
+When we perform a CUR dcomposition of a matrix, we select rows and columns by using a particular probability distribution for the rows and another for the columns. Here is a matrix that we wish to decompose:
+
+|    |    |    |
+|:--:|:--:|:--:|
+| 1  | 2  | 3  |
+| 4  | 5  | 6  |
+| 7  | 8  | 9  |
+| 10 | 11 | 12 | 
+
+Calculate the probability distribution for the rows, and then identify the correct probability (correct to three decimal places) for one of the rows in the list below.
+
+**Resp:** The probability of selecting row 4 is 0.562. 
+
+False ones:
+
+- The probability of selecting row 3 is 0.250.
+- The probability of selecting row 1 is 0.147.
+- The probability of selecting row 1 is 0.002.
+
