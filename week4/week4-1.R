@@ -88,15 +88,19 @@ ratings[ratings == 3] <- 1
 ratings[ratings == 4] <- 1
 ratings[ratings == 5] <- 1
 
-jaccard <- dget("../week2/jaccardSimilarity.R")
-allCombinations <- dget("../week2/allCombinations.R")
-combinations <- allCombinations('abcdefgh', 2)
+names <- c("a", "b", "c", "d", "e", "f", "g", "h")
+k <- 4
 
-for (c in combinations) {
-  charray <- strsplit(c, "")[[1]]
-  sim <- jaccard(ratings, charray[1], charray[2])
-  # print(paste( "similarity ", charray[1], " and ", charray[2], " is ", sim))
-}
+hierarchicalClustering <- dget("hierarchicalClustering.R")
+clusters <- hierarchicalClustering(ratings, names, k)
+
+result <- c(logical(0))
+result <- c(result, "bdg" %in% clusters)
+result <- c(result, "dg" %in% clusters)
+result <- c(result, "e" %in% clusters)
+result <- c(result, "g" %in% clusters)
+
+print(result)
 
 # Question 4
 

@@ -55,11 +55,12 @@ Treat ratings of 3, 4, and 5 as 1 and 1, 2, and blank as 0. Compute the Jaccard 
 
 Note: if you are not familiar with hierarchical clustering, you might want to wait until Video 59 in Week 5, or read Sect. 7.2 of the MMDS book.
 
-**Resp:**
+**Resp:** {e}
+
+False ones:
 
 - {b,d,g}
 - {d,g}
-- {e}
 - {g}
 
 # Question 4:
