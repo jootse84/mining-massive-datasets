@@ -1,5 +1,5 @@
 
-jaccardDistance <- dget("jaccardDistance.R")
+jaccardDistance <- dget("../week4/jaccardDistance.R")
 allCombinations <- dget("../week2/allCombinations.R")
 
 hierarchicalClustering <- function(ratings, names, k) {
@@ -27,6 +27,7 @@ hierarchicalClustering <- function(ratings, names, k) {
     x <- floor(which(df == min(df))[1] / length(names))
     y <- floor(which(df == min(df))[1] %% length(names))
 
+    print(y)
     if (y == 0) {
       if (x == 0) {
         x <- 1
